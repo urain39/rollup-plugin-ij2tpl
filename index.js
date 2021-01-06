@@ -20,7 +20,7 @@ function IJ2Loader(options) {
         name: "IJ2Loader",
         transform: function (code, name) {
             if (filter(name)) {
-                var renderer = ij2tpl.parse(code, options.prefix, options.suffixs);
+                var renderer = ij2tpl.parse(code, options.prefix, options.suffix);
                 return 'import { Renderer } from \'' + options.ij2tplPath + '\';\n' +
                 'export const template = new Renderer(' + JSON.stringify(renderer.treeRoot) + ')\n';
             }
