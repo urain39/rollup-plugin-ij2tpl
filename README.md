@@ -24,7 +24,7 @@ let renderer = new Renderer(template);
 ```
 
 ```html
-<!-- templates.test.ij2.html -->
+<!-- templates/test.ij2.html -->
 
 <div id="content" class="container">
     <p>Hello World!</p>
