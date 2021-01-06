@@ -9,7 +9,7 @@ import { IJ2Loader } from 'rollup-plugin-ij2tpl';
 
 export default {
   ...
-  plugins: [ IJ2Loader() ]
+  plugins: [ IJ2Loader({ij2tplPath: '../node_modules/ij2tpl/ij2tpl', prefix: '${', suffix: '}'}) ]
   ...
 };
 ```

@@ -2,17 +2,20 @@
 import { createFilter } from 'rollup-pluginutils';
 import { parse } from 'ij2tpl';
 export function IJ2Loader(options) {
-    if (options === void 0) { options = {}; }
+    if (!options) { options = {}; }
+
     if (!options.include)
         options.include = ['**/*.ij2', '**/*.ij2.*'];
+
     if (!options.ij2tplPath)
         options.ij2tplPath = 'ij2tpl';
+
     var filter = createFilter(options.include, options.exclude);
     var plugin = {
         name: "IJ2Loader",
         transform: function (code, name) {
             if (filter(name)) {
-                var renderer = parse(code);
+                var renderer = parse(code, options.prefix, options.suffixs);
                 return 'import { Renderer } from \'' + options.ij2tplPath + '\';\n' +
                 'export const template = new Renderer(' + JSON.stringify(renderer.treeRoot) + ')\n';
             }
