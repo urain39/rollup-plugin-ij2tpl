@@ -1,0 +1,28 @@
+{
+  "name": "rollup-plugin-ij2tpl",
+  "version": "1.0.0",
+  "description": "A simple IJ2TPL loader for rollupjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/urain39/rollup-plugin-ij2tpl.git"
+  },
+  "keywords": [
+    "ij2tpl",
+    "rollup-plugin",
+    "laoder"
+  ],
+  "author": "urain39",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/urain39/rollup-plugin-ij2tpl/issues"
+  },
+  "homepage": "https://github.com/urain39/rollup-plugin-ij2tpl#readme",
+  "dependencies": {
+    "ij2tpl": "^0.1.2",
+    "rollup-pluginutils": "^2.8.2"
+  }
+}
