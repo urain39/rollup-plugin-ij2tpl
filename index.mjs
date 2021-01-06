@@ -1,12 +1,7 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-var rollupPluginutils = require('rollup-pluginutils');
-var ij2tpl = require('ij2tpl');
-
 // rollup-plugin-ij2tpl.js
-function IJ2Loader(options) {
+import { createFilter } from 'rollup-pluginutils';
+import { parse } from 'ij2tpl';
+export function IJ2Loader(options) {
     if (!options) { options = {}; }
 
     if (!options.include)
@@ -15,12 +10,12 @@ function IJ2Loader(options) {
     if (!options.ij2tplPath)
         options.ij2tplPath = 'ij2tpl';
 
-    var filter = rollupPluginutils.createFilter(options.include, options.exclude),
+    var filter = createFilter(options.include, options.exclude),
         plugin = {
         name: "IJ2Loader",
         transform: function (code, name) {
             if (filter(name)) {
-                var renderer = ij2tpl.parse(code, options.prefix, options.suffixs);
+                var renderer = parse(code, options.prefix, options.suffixs);
                 return 'import { Renderer } from \'' + options.ij2tplPath + '\';\n' +
                 'export const template = new Renderer(' + JSON.stringify(renderer.treeRoot) + ')\n';
             }
@@ -28,5 +23,3 @@ function IJ2Loader(options) {
     };
     return plugin;
 }
-
-exports.IJ2Loader = IJ2Loader;

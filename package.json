@@ -4,7 +4,8 @@
   "description": "A simple IJ2TPL loader for rollupjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rollup -c rollup.config.js",
+    "test": "cd tests && rollup -c rollup.config.js && cd .."
   },
   "repository": {
     "type": "git",
@@ -24,5 +25,6 @@
   "dependencies": {
     "ij2tpl": "^0.1.2",
     "rollup-pluginutils": "^2.8.2"
-  }
+  },
+  "devDependencies": {}
 }
