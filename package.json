@@ -14,7 +14,7 @@
   "keywords": [
     "ij2tpl",
     "rollup-plugin",
-    "laoder"
+    "loader"
   ],
   "author": "urain39",
   "license": "Apache-2.0",
