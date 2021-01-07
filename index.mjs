@@ -21,5 +21,6 @@ export function IJ2Loader(options) {
             }
         }
     };
+
     return plugin;
 }
